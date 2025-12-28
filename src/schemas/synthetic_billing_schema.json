@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "minItems": 3,
+  "items": {
+    "type": "object",
+    "required": ["service", "cost_inr", "desc"],
+    "properties": {
+      "service": { "type": "string" },
+      "cost_inr": { "type": "number", "minimum": 0 },
+      "desc": { "type": "string" }
+    }
+  }
+}

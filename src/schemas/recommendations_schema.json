@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["recommendations"],
+  "properties": {
+    "project_name": { "type": "string" },
+    "analysis": {
+      "type": "object",
+      "required": [
+        "total_monthly_cost",
+        "budget",
+        "budget_variance",
+        "service_costs",
+        "high_cost_services",
+        "is_over_budget"
+      ],
+      "properties": {
+        "total_monthly_cost": { "type": "number", "minimum": 0 },
+        "budget": { "type": "number" },
+        "budget_variance": { "type": "number" },
+        "service_costs": {
+          "type": "object",
+          "additionalProperties": { "type": "number", "minimum": 0 }
+        },
+        "high_cost_services": {
+          "type": "object",
+          "additionalProperties": { "type": "number", "minimum": 0 }
+        },
+        "is_over_budget": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "recommendations": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 10,
+      "description": "List of cost optimization recommendations (minimum 6)",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "service",
+          "current_cost",
+          "potential_savings",
+          "recommendation_type",
+          "description",
+          "implementation_effort",
+          "risk_level",
+          "steps",
+          "cloud_providers"
+        ],
+        "properties": {
+          "title": { "type": "string" },
+          "service": { "type": "string" },
+          "current_cost": { "type": "number", "minimum": 0 },
+          "potential_savings": { "type": "number", "minimum": 0 },
+          "recommendation_type": {
+            "type": "string",
+            "enum": [
+              "open_source",
+              "rightsizing",
+              "reserved_instance",
+              "architecture",
+              "optimization",
+              "free_tier"
+            ]
+          },
+          "description": { "type": "string" },
+          "implementation_effort": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "steps": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" }
+          },
+          "cloud_providers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": ["AWS", "Azure", "GCP", "Open Source"]
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
