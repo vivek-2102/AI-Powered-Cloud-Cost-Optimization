@@ -1,0 +1,137 @@
+{
+  "total_cost_inr": 31500.0,
+  "budget_inr": 50000,
+  "variance_inr": -18500.0,
+  "over_budget": false,
+  "recommendations": [
+    {
+      "title": "Rightsizing Compute Instances",
+      "service": "Compute",
+      "current_cost": 12000,
+      "potential_savings": 3000,
+      "recommendation_type": "rightsizing",
+      "description": "Downgrade the Node.js backend from 4 vCPUs, 16 GB RAM to 2 vCPUs, 8 GB RAM to reduce costs.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Identify the current instance type and its configuration",
+        "Choose a more cost-effective instance type with similar performance",
+        "Update the instance type in the deployment script"
+      ],
+      "cloud_providers": [
+        "GCP"
+      ]
+    },
+    {
+      "title": "Optimize PostgreSQL Database Cost",
+      "service": "Database",
+      "current_cost": 8000,
+      "potential_savings": 2000,
+      "recommendation_type": "rightsizing",
+      "description": "Downgrade PostgreSQL instance from 1 TB storage to 512 GB storage to reduce costs.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Check the current PostgreSQL instance configuration",
+        "Downgrade the instance to 512 GB storage",
+        "Monitor the instance performance after the downgrade"
+      ],
+      "cloud_providers": [
+        "GCP"
+      ]
+    },
+    {
+      "title": "Optimize Storage Cost by Migrating to Cold Storage",
+      "service": "Storage",
+      "current_cost": 4000,
+      "potential_savings": 1000,
+      "recommendation_type": "rightsizing",
+      "description": "Migrate infrequently accessed data to cold storage to reduce storage costs.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Identify infrequently accessed data",
+        "Migrate data to cold storage",
+        "Configure data tiering"
+      ],
+      "cloud_providers": [
+        "GCP"
+      ]
+    },
+    {
+      "title": "Optimize Networking Costs for Food Delivery App",
+      "service": "Networking",
+      "current_cost": 1000,
+      "potential_savings": 200,
+      "recommendation_type": "rightsizing",
+      "description": "Rightsize the network configuration to reduce egress bytes and optimize costs.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Monitor network traffic and identify areas for optimization",
+        "Rightsize the network configuration to reduce egress bytes",
+        "Implement network traffic filtering and prioritization"
+      ],
+      "cloud_providers": [
+        "GCP",
+        "Azure"
+      ]
+    },
+    {
+      "title": "Optimize Monitoring Costs",
+      "service": "Monitoring",
+      "current_cost": 2000,
+      "potential_savings": 1000,
+      "recommendation_type": "rightsizing",
+      "description": "Downgrade the Monitoring service from Standard to Basic to reduce costs.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Check the current Monitoring service configuration.",
+        "Downgrade the Monitoring service to Basic.",
+        "Verify the cost reduction."
+      ],
+      "cloud_providers": [
+        "GCP"
+      ]
+    },
+    {
+      "title": "Optimize Containers Cost",
+      "service": "Containers",
+      "current_cost": 0,
+      "potential_savings": 0,
+      "recommendation_type": "rightsizing",
+      "description": "Containers are not being used in the project, so there is no cost associated with it. However, to follow the schema, we are providing a recommendation to optimize the cost of Containers.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Check if Containers are being used in the project",
+        "If not, remove the Containers service from the project"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Open Source"
+      ]
+    },
+    {
+      "title": "Optimize Security Service Cost",
+      "service": "Security",
+      "current_cost": 1500,
+      "potential_savings": 1500,
+      "recommendation_type": "rightsizing",
+      "description": "Downgrade the Security service to a lower tier to reduce costs without compromising security.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Review the current security rules and identify any unnecessary or redundant rules.",
+        "Downgrade the Security service to a lower tier that meets the project's security requirements.",
+        "Monitor the Security service usage and adjust the tier as needed to maintain optimal costs."
+      ],
+      "cloud_providers": [
+        "GCP"
+      ]
+    }
+  ]
+}

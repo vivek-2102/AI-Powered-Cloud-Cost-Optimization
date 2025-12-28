@@ -1,0 +1,42 @@
+[
+  {
+    "service": "Compute",
+    "cost_inr": 12000,
+    "desc": "Compute cost for Node.js backend (4 vCPUs, 16 GB RAM) on GCP: 4 * $0.0625 per vCPU * 720 hours + 16 * $0.0625 per GB * 720 hours"
+  },
+  {
+    "service": "Database",
+    "cost_inr": 8000,
+    "desc": "Database cost for PostgreSQL (1 TB storage, 100,000 I/Os) on GCP: 1 * $0.065 per GB * 720 hours + 100,000 * $0.000004 per I/O * 720 hours"
+  },
+  {
+    "service": "Storage",
+    "cost_inr": 4000,
+    "desc": "Storage cost for Object Storage (100 GB storage) on GCP: 100 * $0.04 per GB * 720 hours"
+  },
+  {
+    "service": "Networking",
+    "cost_inr": 1000,
+    "desc": "Networking cost for Food Delivery App (100,000 egress bytes) on GCP: 100,000 * $0.000004 per byte * 720 hours"
+  },
+  {
+    "service": "Monitoring",
+    "cost_inr": 2000,
+    "desc": "Monitoring cost for Food Delivery App (100,000 metrics) on GCP: 100,000 * $0.000004 per metric * 720 hours"
+  },
+  {
+    "service": "Containers",
+    "cost_inr": 0,
+    "desc": "No cost for Containers as it's not used in the project"
+  },
+  {
+    "service": "Security",
+    "cost_inr": 1500,
+    "desc": "Security cost for Food Delivery App (100,000 security rules) on GCP: 100,000 * $0.000004 per rule * 720 hours"
+  },
+  {
+    "service": "Analytics",
+    "cost_inr": 3000,
+    "desc": "Analytics cost for Food Delivery App (100,000 events) on GCP: 100,000 * $0.000004 per event * 720 hours"
+  }
+]
