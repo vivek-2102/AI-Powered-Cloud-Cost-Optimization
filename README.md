@@ -1,6 +1,6 @@
 # AI-Powered Cloud Cost Optimizer
 
-This is a small Python project that uses an LLM to generate cloud cost optimization recommendations based on a project description and billing data. It runs locally and produces structured JSON and HTML reports.
+This is a Python project that uses an LLM to generate cloud cost optimization recommendations based on a project description and billing data. It runs locally and produces structured JSON outputs.The Hugging Face LLM model that I have used is meta-llama/Meta-Llama-3-8B-Instruct.
 
 ## What it does
 
@@ -20,7 +20,7 @@ All outputs follow JSON schemas so they are consistent and predictable.
 
 Python 3.10+
 
-Hugging Face API key (for LLM calls)
+Hugging Face Inference API (for LLM calls)
 
 ## Setup
 
@@ -33,7 +33,8 @@ pip install -r requirements.txt
 Create a .env file in the project root:
 
 HF_API_KEY=your_huggingface_api_key
-HF_MODEL_ID=meta-llama/Meta-Llama-3-8B-Instruct
+
+HF_MODEL_ID=your_model_name
 
 ## Running the project
 
@@ -44,19 +45,25 @@ python -m src.cli
 
 ## The CLI will guide you through:
 
-Entering a project description
+1.Entering a project description (Press Enter twice to finish entering your description)
 
-Generating a project profile
+2.Generating a project profile
 
-Providing or generating billing data
+3.Providing or generating billing data
 
-Generating recommendations
+4.Generating recommendations
 
-Exporting the final report
+5.Exporting the final report
+
+6.Exit
 
 ## Output
 
 Generated files are written to the artifacts/ directory.
+
+## Common Inputs:
+
+project_description.txt
 
 ## Common outputs:
 
